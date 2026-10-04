@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BlueLib Catalogue - browse, search, and borrow books from the BlueCrest College Library."
+    />
+    <title>BlueLib Catalogue | BlueCrest College</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#" aria-label="BlueLib Catalogue home">
+          <span class="brand-mark" aria-hidden="true">BL</span>
+          <span>
+            <strong>BlueLib Catalogue</strong>
+            <small>BlueCrest College Library</small>
+          </span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="#catalogue">Catalogue</a>
+          <a href="#add-book">Add a book</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">BLUECREST COLLEGE, GHANA</p>
+          <h1 id="page-title">Find your next <span>great read.</span></h1>
+          <p>
+            Browse the library collection, find a title, and borrow available
+            books.
+          </p>
+          <a class="button button-light" href="#catalogue">Explore catalogue</a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="book book-one"></div>
+          <div class="book book-two"></div>
+          <div class="book book-three"></div>
+          <div class="book-stack"></div>
+        </div>
+      </section>
+
+      <section
+        class="catalogue-section section-wrap"
+        id="catalogue"
+        aria-labelledby="catalogue-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">THE COLLECTION</p>
+            <h2 id="catalogue-title">Library catalogue</h2>
+            <p class="section-description">
+              Search by title or narrow the collection by category.
+            </p>
+          </div>
+          <span class="book-count" id="book-count" aria-live="polite"
+            >0 books</span
+          >
+        </div>
+
+        <div class="filters">
+          <div class="field search-field">
+            <label for="search-input">Search by title</label>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="e.g. JavaScript..."
+              autocomplete="off"
+            />
+          </div>
+          <div class="field">
+            <label for="filter-category">Filter by category</label>
+            <select id="filter-category">
+              <option value="All">All categories</option>
+              <option value="IT">IT</option>
+              <option value="Business">Business</option>
+              <option value="Science">Science</option>
+              <option value="Arts">Arts</option>
+            </select>
+          </div>
+        </div>
+
+        <p id="results-message" class="results-message" aria-live="polite"></p>
+        <div id="book-list" class="book-grid" aria-label="Books"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <h3>No books found</h3>
+          <p>
+            Try a different title or category, or add a new book to the
+            catalogue.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="add-section"
+        id="add-book"
+        aria-labelledby="add-book-title"
+      >
+        <div class="add-layout section-wrap">
+          <div class="add-intro">
+            <p class="eyebrow">GROW THE COLLECTION</p>
+            <h2 id="add-book-title">Add a new book</h2>
+            <p>
+              Enter the book details below to add it to the catalogue. Your new
+              book will appear immediately without reloading the page.
+            </p>
+            <div class="note-box">
+              <strong>Before you submit</strong>
+              <p>
+                Complete every field. Copies available must be a whole number
+                that is zero or higher.
+              </p>
+            </div>
+          </div>
+
+          <form id="add-book-form" class="book-form" novalidate>
+            <div class="field">
+              <label for="book-title">Title</label>
+              <input
+                id="book-title"
+                name="title"
+                type="text"
+                placeholder="Enter book title"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="book-author">Author</label>
+              <input
+                id="book-author"
+                name="author"
+                type="text"
+                placeholder="Enter author's name"
+                required
+              />
+            </div>
+            <div class="field">
+              <label for="book-category">Category</label>
+              <select id="book-category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="IT">IT</option>
+                <option value="Business">Business</option>
+                <option value="Science">Science</option>
+                <option value="Arts">Arts</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="book-copies">Copies available</label>
+              <input
+                id="book-copies"
+                name="copies"
+                type="number"
+                min="0"
+                step="1"
+                placeholder="e.g. 4"
+                required
+              />
+            </div>
+            <p
+              id="form-error"
+              class="form-message error-message"
+              role="alert"
+            ></p>
+            <p
+              id="form-success"
+              class="form-message success-message"
+              role="status"
+            ></p>
+            <button class="button button-primary submit-button" type="submit">
+              Add book to catalogue
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>
+          <strong>BlueLib Catalogue</strong><br />BlueCrest College, Ghana |
+          BIT225 Advanced Web Technologies
+        </p>
+        <p>
+          Prepared by: Godfred Kwame Tsakpo<br />Student ID:
+          <span class="student-id">400622038994</span>
+        </p>
+        <p class="copyright">
+          © 2026 BlueLib Catalogue. Front-end assignment project.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
